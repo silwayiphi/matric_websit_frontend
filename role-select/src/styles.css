@@ -1,9 +1,9 @@
 :root{
-  --bg: #fff8ee;         /* soft cream */
+  --bg: #fff8ee;         
   --card: #ffffff;
-  --text: #0f172a;       /* slate-900 */
-  --muted:#334155;       /* slate-700 */
-  --ring: #1e40af;       /* blue-800 */
+  --text: #0f172a;       
+  --muted:#334155;       
+  --ring: #1e40af;       
   --shadow: 0 12px 40px rgba(2, 6, 23, 0.08);
   --radius: 16px;
 }

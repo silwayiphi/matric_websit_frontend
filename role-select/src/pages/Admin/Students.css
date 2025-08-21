@@ -1,0 +1,75 @@
+/* match the warm background vibe from your mock */
+:root { --cream:#fff7ed; --ink:#0f172a; --muted:#334155; }
+.content { background: var(--cream); }
+
+/* search */
+.searchbar{
+  position: relative;
+  width: min(420px, 92%);
+  margin: 6px 0 14px;
+}
+.search-icon{
+  position:absolute; left:12px; top:50%; transform:translateY(-50%); opacity:.7;
+}
+.search-input{
+  width:100%; padding:12px 14px 12px 38px;
+  border-radius:12px; border:1px solid #e5e7eb; outline:none;
+  background:#fff;
+}
+.search-input:focus{ border-color:#3b82f6; box-shadow:0 0 0 3px rgba(59,130,246,.15); }
+
+/* table card */
+.table-card{ border-radius:14px; }
+.students-table{ width:100%; border-collapse:collapse; }
+.students-table thead th{
+  text-align:left; padding:12px 14px; color: var(--muted); font-weight:700;
+  background:#fff; border-bottom:1px solid #e5e7eb;
+}
+.students-table tbody td{
+  padding:14px; border-bottom:1px solid #f1f5f9; color: var(--ink);
+}
+.students-table tbody tr:nth-child(odd){ background:#fffdf8; }
+.students-table tbody tr:nth-child(even){ background:#fff; }
+
+.name{ font-weight:700; }
+.col-actions{ width:1%; white-space:nowrap; }
+.actions{ text-align:right; }
+
+/* status chips */
+.status{
+  font-weight:700; padding:2px 6px; border-radius:8px;
+}
+.status.active{ color:#0ea5a5; }
+.status.expired{ color:#ef4444; }
+
+/* manage button */
+.btn.manage{
+  background:#0ea5a5; color:white; border:none;
+  padding:10px 14px; border-radius:10px; font-weight:800;
+  cursor:pointer;
+}
+.btn.manage:hover{ filter:brightness(1.06); }
+
+/* empty state */
+.empty{
+  padding:14px; color:#64748b;
+}
+
+/* recent activity block (purple header + orange body like mock) */
+.recent-card{ margin-top:16px; overflow:hidden; }
+.hdr{ padding:14px 16px; color:#fff; font-weight:800; }
+.hdr-indigo{ background:#5b3bf1; }
+.recent-body{
+  height:120px;
+  background: linear-gradient(180deg,#ffb35a 0%, #f97316 65%);
+}
+
+/* responsive */
+@media (max-width: 720px){
+  .students-table thead{ display:none; }
+  .students-table tbody tr{
+    display:grid; grid-template-columns: 1fr 1fr; gap:8px; padding:12px;
+  }
+  .students-table tbody td{ border:0; padding:6px 0; }
+  .actions{ text-align:left; grid-column: 1 / -1; }
+}

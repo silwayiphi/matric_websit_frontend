@@ -1,0 +1,66 @@
+/* page spacing comes from .content in your layout css */
+
+.kpi-grid{
+  display:grid;
+  grid-template-columns: repeat(4, minmax(160px, 1fr));
+  gap:16px;
+  margin-bottom:20px;
+}
+.kpi{
+  border-radius:16px;
+  padding:20px 18px;
+  color:#fff;
+  box-shadow: 0 8px 30px rgba(2,6,23,.06);
+  display:flex; flex-direction:column; justify-content:center;
+}
+.kpi-blue{   background:#3b82f6; }   /* blue */
+.kpi-orange{ background:#f59e0b; }   /* orange */
+.kpi-green{  background:#10b981; }   /* green */
+.kpi-tomato{ background:#f97316; }   /* orange/red */
+.kpi-value{ font-size:32px; font-weight:900; line-height:1; }
+.kpi-label{ margin-top:8px; font-weight:700; opacity:.95; }
+
+.two-col{
+  display:grid; grid-template-columns: 1fr 1fr;
+  gap:16px; margin: 8px 0 20px;
+}
+
+.card{
+  background:#fff; border-radius:16px; overflow:hidden;
+  box-shadow: 0 8px 30px rgba(2,6,23,.06);
+}
+.hdr{
+  padding:12px 16px; color:#fff; font-weight:800; letter-spacing:.3px;
+}
+.hdr-indigo{ background:#5b3bf1; }  /* teachers header */
+.hdr-teal{   background:#0ea5a5; }  /* students header */
+.hdr-orange{ background:#f97316; }  /* recent activity header */
+
+.card-body{ padding: 12px 16px; }
+.card-body.padded{ padding:20px; }
+
+.table-wrap{ overflow-x:auto; }
+.table{ width:100%; border-collapse: collapse; }
+.table thead th{
+  font-size:14px; text-align:left; padding:10px 12px; color:#0f172a;
+  background:#eef2ff; /* faint tint under header bar */
+}
+.table tbody td{
+  padding:10px 12px; border-bottom:1px solid #e5e7eb; color:#0f172a;
+}
+.table tbody tr:nth-child(odd){ background:#f8fafc; }
+
+.activity{ margin:0; padding-left:0; list-style:none; display:grid; gap:10px; }
+.activity .dot{
+  display:inline-block; width:10px; height:10px; border-radius:50%;
+  background:#0ea5a5; margin-right:8px; vertical-align:middle;
+}
+
+/* responsive tweaks */
+@media (max-width: 980px){
+  .kpi-grid{ grid-template-columns: repeat(2, 1fr); }
+  .two-col{ grid-template-columns: 1fr; }
+}
+@media (max-width: 560px){
+  .kpi-value{ font-size:28px; }
+}
