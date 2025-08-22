@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route} from "react-router-dom";
 import RoleSelect from "./pages/RoleSelect";
 import AdminLogin from "./pages/Admin/Login";
 import AdminLayout from "./pages/Admin/layouts/AdminLayout";
@@ -15,6 +15,8 @@ import Teacher from "./pages/Teacher/Teacher";
 export default function App() {
   return (
     <Routes>
+
+
       <Route path="/" element={<RoleSelect />} />
       <Route path="/AdminLogin" element={<AdminLogin />} />
       <Route path="/teacher" element={<Teacher />} />
@@ -31,7 +33,7 @@ export default function App() {
         <Route path="settings" element={<Settings />} />
       </Route>
 
-      <Route path="*" element={<Navigate to="/" replace />} />
+      <Route path="*" element={<div className="page"><h2>Not found</h2></div>} />
     </Routes>
   );
 }
