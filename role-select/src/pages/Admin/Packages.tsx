@@ -1,10 +1,9 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./packages.css";
 
 type Pkg = { id: string; name: string; type: "Teacher" | "Student"; price: number; durationDays: number };
 
-// TODO: replace with API data later
+
 const DATA: Pkg[] = [
   { id: "p1", name: "Basic",    type: "Teacher", price: 100, durationDays: 30 },
   { id: "p2", name: "Standard", type: "Student", price:  50, durationDays: 30 },

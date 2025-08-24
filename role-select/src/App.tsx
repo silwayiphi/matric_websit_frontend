@@ -1,6 +1,7 @@
 import { Routes, Route} from "react-router-dom";
 import RoleSelect from "./pages/RoleSelect";
 import AdminLogin from "./pages/Admin/Login";
+import ForgotPassword from "./pages/Admin/forgotPassword";
 import AdminLayout from "./pages/Admin/layouts/AdminLayout";
 
 import AdminDashboard from "./pages/Admin/dashboard";
@@ -19,6 +20,7 @@ export default function App() {
 
       <Route path="/" element={<RoleSelect />} />
       <Route path="/AdminLogin" element={<AdminLogin />} />
+      <Route path="ForgotPassword" element={<ForgotPassword/>}/>
       <Route path="/teacher" element={<Teacher />} />
 
       {/* all /admin/* pages inherit the Sidebar via AdminLayout */}

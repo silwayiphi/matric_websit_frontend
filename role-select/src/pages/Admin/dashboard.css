@@ -1,66 +1,137 @@
-/* page spacing comes from .content in your layout css */
-
-.kpi-grid{
-  display:grid;
-  grid-template-columns: repeat(4, minmax(160px, 1fr));
-  gap:16px;
-  margin-bottom:20px;
-}
-.kpi{
-  border-radius:16px;
-  padding:20px 18px;
-  color:#fff;
-  box-shadow: 0 8px 30px rgba(2,6,23,.06);
-  display:flex; flex-direction:column; justify-content:center;
-}
-.kpi-blue{   background:#3b82f6; }   /* blue */
-.kpi-orange{ background:#f59e0b; }   /* orange */
-.kpi-green{  background:#10b981; }   /* green */
-.kpi-tomato{ background:#f97316; }   /* orange/red */
-.kpi-value{ font-size:32px; font-weight:900; line-height:1; }
-.kpi-label{ margin-top:8px; font-weight:700; opacity:.95; }
-
-.two-col{
-  display:grid; grid-template-columns: 1fr 1fr;
-  gap:16px; margin: 8px 0 20px;
+/* ====== GLOBAL ====== */
+body {
+  font-family: Arial, sans-serif;
+  background: #f9fafb;
+  margin: 0;
+  color: #111827;
 }
 
-.card{
-  background:#fff; border-radius:16px; overflow:hidden;
-  box-shadow: 0 8px 30px rgba(2,6,23,.06);
-}
-.hdr{
-  padding:12px 16px; color:#fff; font-weight:800; letter-spacing:.3px;
-}
-.hdr-indigo{ background:#5b3bf1; }  /* teachers header */
-.hdr-teal{   background:#0ea5a5; }  /* students header */
-.hdr-orange{ background:#f97316; }  /* recent activity header */
-
-.card-body{ padding: 12px 16px; }
-.card-body.padded{ padding:20px; }
-
-.table-wrap{ overflow-x:auto; }
-.table{ width:100%; border-collapse: collapse; }
-.table thead th{
-  font-size:14px; text-align:left; padding:10px 12px; color:#0f172a;
-  background:#eef2ff; /* faint tint under header bar */
-}
-.table tbody td{
-  padding:10px 12px; border-bottom:1px solid #e5e7eb; color:#0f172a;
-}
-.table tbody tr:nth-child(odd){ background:#f8fafc; }
-
-.activity{ margin:0; padding-left:0; list-style:none; display:grid; gap:10px; }
-.activity .dot{
-  display:inline-block; width:10px; height:10px; border-radius:50%;
-  background:#0ea5a5; margin-right:8px; vertical-align:middle;
+.content-header {
+  text-align: center;
+  padding: 2rem 0;
+  border-bottom: 1px solid #e5e7eb;
 }
 
-/* responsive tweaks */
-@media (max-width: 980px){
-  .kpi-grid{ grid-template-columns: repeat(2, 1fr); }
-  .two-col{ grid-template-columns: 1fr; }
+.content-header h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #111827;
 }
-@media (max-width: 560px){
-  .kpi-value{ font-size:28px; }
+
+/* ====== KPI GRID ====== */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.kpi {
+  background: #2563eb; /* single theme color */
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+}
+
+.kpi:hover {
+  transform: translateY(-3px);
+}
+
+.kpi-value {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.kpi-label {
+  font-size: 0.9rem;
+  opacity: 0.95;
+}
+
+/* ====== CARD ====== */
+.card {
+  background: #fff;
+  margin: 1.5rem 2rem;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+.card header {
+  background: #2563eb; /* single theme color */
+  padding: 1rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.card-body {
+  padding: 1.2rem;
+}
+
+/* ====== TWO COLUMN LAYOUT ====== */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  padding: 0 2rem;
+}
+
+@media (max-width: 900px) {
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ====== TABLE ====== */
+.table-wrap {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.table th, .table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.table th {
+  background: #f3f4f6;
+  font-weight: 600;
+  color: #374151;
+}
+
+.table tbody tr:hover {
+  background: #f9fafb;
+}
+
+/* ====== ACTIVITY LIST ====== */
+.activity {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.activity li {
+  padding: 10px 0;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.activity .dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #2563eb; /* theme color */
+  border-radius: 50%;
+  margin-right: 8px;
 }
