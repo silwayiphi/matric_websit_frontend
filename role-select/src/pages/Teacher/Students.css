@@ -1,0 +1,50 @@
+.students-page { padding:2rem; }
+
+/* Header */
+.page-header { display:flex; justify-content:space-between; margin-bottom:2rem; }
+.page-header h1 { font-size:24px; font-weight:700; }
+.page-header p { color:#6b7280; }
+.page-header .actions { display:flex; gap:1rem; }
+
+/* Class Code Box */
+.class-code { background:#eff6ff; border:1px solid #bfdbfe; border-radius:8px; padding:1rem; display:flex; justify-content:space-between; margin-bottom:1rem; }
+.class-code h3 { margin:0; font-size:14px; font-weight:600; color:#1e3a8a; }
+.class-code p { font-size:12px; color:#1d4ed8; }
+.code-box { display:flex; align-items:center; gap:.5rem; }
+.code-box span { font-family:monospace; font-weight:700; color:#1e3a8a; font-size:18px; }
+
+/* Tabs */
+.tabs { display:flex; gap:.5rem; margin:1rem 0; }
+.tabs button { padding:.4rem 1rem; border-radius:6px; border:none; cursor:pointer; }
+.tabs button.active { background:#111827; color:white; }
+
+/* Toolbar */
+.toolbar { display:flex; justify-content:space-between; margin-bottom:1rem; gap:1rem; }
+.search-box { position:relative; flex:1; }
+.search-box input { width:100%; padding:.5rem 1rem .5rem 2rem; border:1px solid #ccc; border-radius:6px; }
+.search-box .icon{ position:absolute; left:8px; top:50%; transform:translateY(-50%); color:#9ca3af; }
+
+/* Table */
+.table-wrapper { overflow-x:auto; }
+.students-table { width:100%; border-collapse:collapse; }
+.students-table th, .students-table td { padding:.75rem; text-align:left; font-size:14px; }
+.students-table thead { background:#f9fafb; }
+.students-table tbody tr:hover { background:#f3f4f6; }
+
+/* Student Row */
+.student-info { display:flex; gap:.5rem; align-items:center; }
+.avatar { width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg,#2563eb,#1e40af); color:white; display:flex; align-items:center; justify-content:center; font-weight:600; }
+
+/* Tags & Status */
+.subject-tag { background:#e0f2fe; color:#0369a1; padding:2px 6px; border-radius:10px; font-size:12px; margin-right:4px; }
+.badge { display:inline-flex; align-items:center; gap:4px; padding:2px 6px; border-radius:10px; font-size:12px; }
+.badge.green { background:#dcfce7; color:#166534; }
+.badge.gray { background:#f3f4f6; color:#374151; }
+.badge.yellow { background:#fef9c3; color:#92400e; }
+
+/* Empty state */
+.empty { text-align:center; padding:2rem; color:#6b7280; }
+
+/* Bulk Actions */
+.bulk-bar { position:fixed; bottom:1rem; left:50%; transform:translateX(-50%); background:#111827; color:white; padding:.75rem 1.5rem; border-radius:8px; display:flex; align-items:center; gap:1rem; box-shadow:0 2px 6px rgba(0,0,0,.2); }
+.bulk-bar .actions { display:flex; gap:.5rem; }

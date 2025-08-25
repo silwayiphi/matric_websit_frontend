@@ -1,0 +1,40 @@
+.performance-page { padding:2rem; }
+
+/* Header */
+.page-header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:2rem; }
+.page-header h1 { font-size:24px; font-weight:700; }
+.page-header p { color:#6b7280; margin-top:4px; }
+.page-header .actions { display:flex; gap:10px; align-items:center; }
+.page-header select { padding:6px 12px; border:1px solid #ccc; border-radius:6px; }
+
+/* Stats */
+.stat-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; margin-bottom:2rem; }
+.stat-card {
+  background:white; border:1px solid #e5e7eb; border-radius:10px; padding:1rem;
+  display:flex; justify-content:space-between; align-items:center;
+}
+.stat-card h3 { margin-top:4px; font-size:20px; font-weight:700; }
+.stat-card small { color:#6b7280; }
+.stat-card .icon { padding:10px; border-radius:8px; }
+.icon.blue{ background:#eff6ff; color:#2563eb; }
+.icon.green{ background:#ecfdf5; color:#16a34a; }
+.icon.purple{ background:#f5f3ff; color:#7c3aed; }
+.icon.orange{ background:#fff7ed; color:#f59e0b; }
+.trend.up{ color:#16a34a; font-size:13px; }
+.trend.down{ color:#dc2626; font-size:13px; }
+
+/* Chart */
+.card { background:white; padding:1.5rem; border:1px solid #e5e7eb; border-radius:12px; margin-bottom:2rem; }
+.chart { display:flex; align-items:flex-end; gap:1rem; height:250px; }
+.chart-bar { width:100%; background:#2563eb; border-radius:4px; }
+.chart-col { flex:1; text-align:center; }
+.chart-col .week { color:#6b7280; font-size:13px; margin-top:6px; display:block; }
+.chart-col .score { font-weight:600; font-size:13px; }
+
+/* Subject Stats */
+.subject-list { display:flex; flex-direction:column; gap:1rem; }
+.subject-item { font-size:14px; }
+.subject-header{ display:flex; justify-content:space-between; align-items:center; }
+.subject-header span{ margin-right:8px; }
+.progress { width:100%; background:#e5e7eb; height:6px; border-radius:6px; margin-top:4px; }
+.progress div { height:6px; background:#2563eb; border-radius:6px; }

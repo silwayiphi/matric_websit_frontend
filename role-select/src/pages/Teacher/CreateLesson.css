@@ -1,0 +1,66 @@
+.lesson-page { min-height: 100vh; background:#f9fafb; display:flex; flex-direction:column; }
+
+/* Header */
+.lesson-header {
+  background:white; border-bottom:1px solid #e5e7eb;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:15px 20px;
+}
+.header-left { display:flex; gap:10px; align-items:center; }
+.lesson-header h1 { font-size:20px; font-weight:600; }
+.header-actions { display:flex; gap:10px; }
+
+/* Buttons */
+.btn { padding:8px 12px; border:none; border-radius:6px; cursor:pointer; font-size:14px; display:inline-flex; align-items:center; gap:6px; }
+.btn.primary { background:#2563eb; color:white; }
+.btn.primary:hover { background:#1e40af; }
+.btn.secondary { background:#f3f4f6; color:#374151; }
+.btn.secondary:hover { background:#e5e7eb; }
+.btn.link { background:none; color:#2563eb; font-weight:500; }
+.btn.link:hover { text-decoration:underline; }
+.btn.small { padding:6px 10px; font-size:12px; }
+.btn.danger { background:#fee2e2; color:#dc2626; }
+
+/* Icon Button */
+.icon-btn { background:none; border:none; border-radius:6px; padding:6px; cursor:pointer; }
+.icon-btn:hover { background:#f3f4f6; }
+.icon-btn.danger { color:#dc2626; }
+.icon-muted { color:#9ca3af; }
+
+/* Main Body */
+.lesson-body { flex:1; overflow-y:auto; }
+.editor-panel { max-width:800px; margin:auto; padding:20px; background:white; }
+
+/* Sections */
+.lesson-section { margin-bottom:25px; }
+.section-title { font-size:18px; font-weight:600; margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+
+/* Forms */
+.form-group { margin-bottom:15px; }
+.form-group label { display:block; font-weight:500; margin-bottom:5px; }
+.form-group input, .form-group select { width:100%; padding:10px; border:1px solid #d1d5db; border-radius:6px; }
+.form-group input:focus, .form-group select:focus { border-color:#2563eb; outline:none; }
+
+/* Objectives */
+.objective-row { display:flex; gap:8px; margin-bottom:8px; }
+.objective-row input { flex:1; padding:8px; border:1px solid #d1d5db; border-radius:6px; }
+
+/* Tabs */
+.tabs { display:flex; gap:6px; border-bottom:1px solid #e5e7eb; margin-bottom:8px; }
+.tab { padding:6px 12px; background:none; border:none; border-bottom:2px solid transparent; cursor:pointer; }
+.tab.active { border-bottom:2px solid #2563eb; color:#2563eb; font-weight:600; }
+
+/* Section Input */
+.section-input { width:100%; border:0; border-bottom:1px solid #ccc; padding:6px; font-size:16px; font-weight:500; margin-bottom:10px; }
+
+/* Toolbar */
+.toolbar { display:flex; gap:6px; border:1px solid #ddd; border-radius:6px 6px 0 0; padding:6px; background:#f9fafb; }
+.toolbar button { background:none; border:none; cursor:pointer; padding:4px; border-radius:4px; }
+.toolbar button:hover { background:#e5e7eb; }
+
+/* Editor Area */
+.editor { width:100%; border:1px solid #ddd; border-top:0; padding:10px; border-radius:0 0 6px 6px; resize:vertical; }
+
+/* Upload Mode */
+.center { text-align:center; padding:40px; border:2px dashed #ccc; border-radius:10px; color:#555; }
+.center .btn { margin-top:15px; }

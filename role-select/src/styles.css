@@ -1,3 +1,9 @@
+/* === Tailwind Directives === */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 :root{
   --bg: #fff8ee;         
   --card: #ffffff;
