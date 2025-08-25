@@ -14,7 +14,7 @@ export default function Sidebar() {
         <Item to="/admin/packages" label="Packages Management" icon={<PackagesIcon />} />
         <Item to="/admin/reports" label="Payments & Reports" icon={<ReportsIcon />} />
         <Item to="/admin/settings" label="System Settings" icon={<SettingsIcon />} />
-        <Item to="/admin/logout" label="Logout" icon={undefined}  />
+        <Item to="/admin/AdminLogin" label="Logout" icon={undefined}/>
       </nav>
     </aside>
   );

@@ -2,6 +2,8 @@ import { Routes, Route } from "react-router-dom";
 
 import RoleSelect from "./pages/RoleSelect";
 import AdminLogin from "./pages/Admin/Login";
+import ForgotPassword from "./pages/Admin/forgotPassword";
+
 import TeacherLogin from "./pages/Teacher/TeacherLogin";
 import AdminLayout from "./pages/Admin/layouts/AdminLayout";
 
@@ -28,7 +30,6 @@ export default function App() {
       {/* Public entry points */}
       <Route path="/" element={<RoleSelect />} />
       <Route path="/AdminLogin" element={<AdminLogin />} />
-      <Route path="/teacher/login" element={<TeacherLogin />} />
 
       {/* TEACHER AREA: all routes that inherit TeacherLayout */}
       <Route path="/teacher" element={<TeacherLayout />}>

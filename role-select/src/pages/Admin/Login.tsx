@@ -13,10 +13,15 @@ export default function AdminLogin() {
     e.preventDefault();
     setErr(null);
       if (email.includes("@")) {
-      nav("/admin/dashboard", { replace: true }); // send to dashboard
+      nav("/admin/dashboard", { replace: true }); 
     } else {
       setErr("Please enter a valid email (must contain '@').");
     }
+  };
+
+  const handleForgotPassword = (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+    nav("/ForgotPassword");
   };
 
   return (
@@ -65,7 +70,7 @@ export default function AdminLogin() {
                 />
                 <span>Remember me</span>
               </label>
-              <a className="link" href="#" onClick={(e) => e.preventDefault()}>
+              <a className="link" href="#" onClick={handleForgotPassword}>
                 Forgot Password?
               </a>
             </div>
