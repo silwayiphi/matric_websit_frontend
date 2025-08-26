@@ -1,12 +1,9 @@
 import { Routes, Route } from "react-router-dom";
-
 import RoleSelect from "./pages/RoleSelect";
 import AdminLogin from "./pages/Admin/Login";
-import ForgotPassword from "./pages/Admin/forgotPassword";
-
 import TeacherLogin from "./pages/Teacher/TeacherLogin";
+import ForgotPassword from "./pages/Admin/forgotPassword";
 import AdminLayout from "./pages/Admin/layouts/AdminLayout";
-
 import AdminDashboard from "./pages/Admin/dashboard";
 import TeacherDashboard from "./pages/Teacher/Dashboard";
 import Teachers from "./pages/Admin/Teacher";
@@ -15,7 +12,6 @@ import Content from "./pages/Admin/Content";
 import Packages from "./pages/Admin/Packages";
 import Reports from "./pages/Admin/Reports";
 import Settings from "./pages/Admin/Settings";
-
 import TeacherLayout from "./pages/Teacher/layouts/TeacherLayout";
 import MySubjects from "./pages/Teacher/MySybjects";
 import TeacherStudents from "./pages/Teacher/Students";
@@ -23,6 +19,7 @@ import MyLessons from "./pages/Teacher/MyLessons";
 import Performance from "./pages/Teacher/Perforformance";
 import TeacherSettings from "./pages/Teacher/Settings";
 import CreateLesson from "./pages/Teacher/CreateLesson";
+import TeachersForgotPassword from "./pages/Teacher/TeachersForgotPassword";
 
 export default function App() {
   return (
@@ -30,6 +27,10 @@ export default function App() {
       {/* Public entry points */}
       <Route path="/" element={<RoleSelect />} />
       <Route path="/AdminLogin" element={<AdminLogin />} />
+      <Route path="ForgotPassword" element={<ForgotPassword/>}/>
+      <Route path="TeacherLogin" element={<TeacherLogin/>}/>
+      <Route path="TeachersForgotPassword" element={<TeachersForgotPassword/>}/>
+      
 
       {/* TEACHER AREA: all routes that inherit TeacherLayout */}
       <Route path="/teacher" element={<TeacherLayout />}>

@@ -21,6 +21,11 @@ export default function TeacherLogin() {
     }
   };
 
+    const handleForgotPassword = (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+    nav("/ForgotPassword");
+  };
+
   return (
     <div className="login-bg">
       <main className="login-wrap">
@@ -68,7 +73,7 @@ export default function TeacherLogin() {
                 />
                 <span>Remember me</span>
               </label>
-              <a className="link" href="#" onClick={(e) => e.preventDefault()}>
+              <a className="link" href="#" onClick={handleForgotPassword}>
                 Forgot Password?
               </a>
             </div>

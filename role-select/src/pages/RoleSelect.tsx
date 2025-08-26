@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+
 
 function ShieldGearIcon() {
   return (
@@ -28,7 +29,7 @@ export default function RoleSelect() {
         </Link>
 
 
-        <Link to="/teacher" className="card" role="button" aria-label="Continue as Teacher">
+        <Link to="/TeacherLogin" className="card" role="button" aria-label="Continue as Teacher">
           <div className="icon"><BlackboardIcon /></div>
           <div className="label">Teacher</div>
         </Link>

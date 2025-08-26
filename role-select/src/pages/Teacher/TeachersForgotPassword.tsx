@@ -1,8 +1,8 @@
 import { useState } from "react";
-import './forgotPassword.css';
+import './TeachersForgotPassword.css';
 
 
-function ForgotPassword() {
+function TeachersForgotPassword() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
@@ -47,4 +47,4 @@ function ForgotPassword() {
   );
 }
 
-export default ForgotPassword;
+export default TeachersForgotPassword;
