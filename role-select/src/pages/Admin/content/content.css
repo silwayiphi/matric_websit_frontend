@@ -1,0 +1,15 @@
+.panel{ background:#dcdcdc; border:2px solid #2d2be9; border-radius:14px; padding:28px; }
+.stack{ display:grid; gap:26px; justify-items:center; }
+.big-btn{ min-width:min(560px,90%); padding:18px 22px; border-radius:12px; color:#fff; font-weight:900; text-align:center; text-decoration:none; display:inline-block; box-shadow:0 8px 25px rgba(2,6,23,.12); }
+.big-btn.blue{background:#3b82f6;} .big-btn.purple{background:#7c2ee6;} .big-btn.indigo{background:#2d2be9;}
+.upload{ display:grid; gap:12px; padding:16px; background:#fff; border-radius:14px; margin:12px 0; box-shadow:0 8px 25px rgba(2,6,23,.06); }
+.input,.file{ width:100%; padding:10px 12px; border:1px solid #e5e7eb; border-radius:10px; background:#fff; }
+.btn{ cursor:pointer; }
+.btn.primary{ background:#0ea5a5; color:#fff; border:0; border-radius:10px; padding:10px 14px; font-weight:800; }
+.btn.ghost{ background:#fff; border:1px solid #e5e7eb; border-radius:10px; padding:10px 14px; font-weight:800; }
+.table{ width:100%; border-collapse:collapse; background:#fff; border-radius:14px; overflow:hidden; box-shadow:0 8px 25px rgba(2,6,23,.06); }
+.table th,.table td{ padding:12px 14px; border-bottom:1px solid #eef2f7; text-align:left; }
+.table thead th{ background:#f3f4ff; font-weight:900; }
+.progress{ height:8px; background:#e5e7eb; border-radius:999px; overflow:hidden; }
+.progress > span{ display:block; height:100%; background:#10b981; }
+.breadcrumbs{ color:#334155; margin-bottom:12px; font-weight:700; }

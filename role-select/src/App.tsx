@@ -20,6 +20,10 @@ import Performance from "./pages/Teacher/Perforformance";
 import TeacherSettings from "./pages/Teacher/Settings";
 import CreateLesson from "./pages/Teacher/CreateLesson";
 import TeachersForgotPassword from "./pages/Teacher/TeachersForgotPassword";
+import Upload from "./pages/Admin/content/upload";
+import Subjects from "./pages/Admin/content/subject";
+import ContentPage from "./pages/Admin/content/acontent";
+import Papers from "./pages/Admin/content/paper";
 
 export default function App() {
   return (
@@ -50,7 +54,14 @@ export default function App() {
         <Route path="dashboard" element={<AdminDashboard />} />
         <Route path="teachers" element={<Teachers />} />
         <Route path="students" element={<Students />} />
-        <Route path="content" element={<Content />} />
+
+          <Route path="content" element={<Content />}>
+        <Route index element={<Subjects />} />                                {/* /admin/content */}
+        <Route path=":subject/papers" element={<Papers />} />                 {/* /admin/content/mathematics/papers */}
+        <Route path=":subject/:paper/content" element={<ContentPage />} />  {/* /admin/content/mathematics/paper-1/content */}
+        <Route path=":subject/:paper/:topic/upload" element={<Upload />} />   {/* /admin/content/mathematics/paper-1/algebra/upload */}
+        </Route>
+
         <Route path="packages" element={<Packages />} />
         <Route path="reports" element={<Reports />} />
         <Route path="settings" element={<Settings />} />
