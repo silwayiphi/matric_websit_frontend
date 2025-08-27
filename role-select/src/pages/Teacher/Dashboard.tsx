@@ -1,8 +1,11 @@
 // src/pages/Teacher/Dashboard.tsx
 import { BookOpen, Users, FileText, Plus, Eye, Clock, AlertCircle } from "lucide-react";
+import { useNavigate } from "react-router-dom";  // ✅ import navigate hook
 import "./Dashboard.css";
 
 export default function Dashboard() {
+  const navigate = useNavigate(); // ✅ initialize
+
   const stats = {
     totalSubjects: 2,
     totalStudents: 45,
@@ -25,15 +28,24 @@ export default function Dashboard() {
 
       {/* Quick Actions */}
       <div className="quick-actions">
-        <button className="quick-btn blue">
+        <button 
+          className="quick-btn blue"
+          onClick={() => navigate("/teacher/lessons/create")} // ✅ go to CreateLesson
+        >
           <Plus /> <h3>Create Lesson</h3>
           <p>Build new content for your students</p>
         </button>
-        <button className="quick-btn green">
+        <button 
+          className="quick-btn green"
+          onClick={() => navigate("/teacher/students")} // example: Add Students
+        >
           <Users /> <h3>Add Students</h3>
           <p>Invite students to your class</p>
         </button>
-        <button className="quick-btn purple">
+        <button 
+          className="quick-btn purple"
+          onClick={() => navigate("/teacher/performance")} // example: Reports page
+        >
           <Eye /> <h3>View Reports</h3>
           <p>Check student performance</p>
         </button>

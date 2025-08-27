@@ -23,7 +23,7 @@ export default function RoleSelect() {
       <h1 className="title">Select Your Role</h1>
 
       <div className="grid">
-        <Link to="/AdminLogin" className="card" role="button" aria-label="Continue as Admin">
+        <Link to="/admin/login" className="card" role="button" aria-label="Continue as Admin">
           <div className="icon"><ShieldGearIcon /></div>
           <div className="label">Admin</div>
         </Link>

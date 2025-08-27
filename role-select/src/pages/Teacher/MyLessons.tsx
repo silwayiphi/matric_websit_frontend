@@ -1,10 +1,11 @@
 // src/components/MyLessons.tsx
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { 
-  Plus, Search, FileText, CheckCircle, BookOpen,
-  AlertCircle, Clock
+  Plus, Search, FileText, CheckCircle,
+  Clock
 } from "lucide-react";
-import "./MyLessons.css";   // ✅ new CSS file
+import { useNavigate } from "react-router-dom";
+import "./MyLessons.css";   // ✅ CSS
 
 interface Lesson {
   id: string;
@@ -22,31 +23,38 @@ interface Lesson {
 }
 
 export default function MyLessons() {
-  const [lessons] = useState<Lesson[]>([
-    { id:"1", title:"Introduction to Financial Mathematics", subject:"Mathematics",
-      type:"lesson", status:"published", createdDate:"2024-10-20", lastModified:"2 days ago",
-      duration:"45 min", studentsAccessed:28, totalStudents:32, topics:["Interest","Annuities","Loans"], attachments:3 },
-    { id:"2", title:"Quadratic Equations Quiz", subject:"Mathematics", type:"quiz", status:"published",
-      createdDate:"2024-10-18", lastModified:"4 days ago", duration:"30 min", studentsAccessed:30, totalStudents:32,
-      topics:["Algebra","Equations"], attachments:0 },
-    { id:"3", title:"Cell Division and Mitosis", subject:"Life Sciences", type:"lesson", status:"draft",
-      createdDate:"2024-10-25", lastModified:"1 hour ago", duration:"60 min", studentsAccessed:0, totalStudents:28,
-      topics:["Biology","Cells","Reproduction"], attachments:5 },
-    { id:"4", title:"Genetics Assignment", subject:"Life Sciences", type:"assignment", status:"scheduled",
-      createdDate:"2024-10-24", lastModified:"1 day ago", duration:"7 days", studentsAccessed:0, totalStudents:28,
-      topics:["Genetics","DNA","Heredity"], attachments:2 }
-  ]);
+  const navigate = useNavigate();
 
+  const [lessons, setLessons] = useState<Lesson[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [filterType, setFilterType] = useState<string>("all");
   const [filterStatus, setFilterStatus] = useState<string>("all");
   const [viewMode, setViewMode] = useState<'grid' | 'list'>("grid");
 
+  // ✅ Load lessons from localStorage
+  useEffect(() => {
+    const stored = JSON.parse(localStorage.getItem("lessons") || "[]");
+
+    // Optionally merge with mock data if needed
+    const mock: Lesson[] = [
+      { id:"1", title:"Introduction to Financial Mathematics", subject:"Mathematics",
+        type:"lesson", status:"published", createdDate:"2024-10-20", lastModified:"2 days ago",
+        duration:"45 min", studentsAccessed:28, totalStudents:32, topics:["Interest","Annuities","Loans"], attachments:3 },
+    ];
+
+    if (stored && stored.length > 0) {
+      setLessons(stored);
+    } else {
+      setLessons(mock);
+    }
+  }, []);
+
+  // ✅ Filtered lessons (search + filters)
   const filteredLessons = lessons.filter(l => {
     const matchesSearch =
       l.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       l.subject.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      l.topics.some(t => t.toLowerCase().includes(searchTerm.toLowerCase()));
+      (l.topics && l.topics.some(t => t.toLowerCase().includes(searchTerm.toLowerCase())));
     const matchesType = filterType==="all" || l.type===filterType;
     const matchesStatus = filterStatus==="all" || l.status===filterStatus;
     return matchesSearch && matchesType && matchesStatus;
@@ -60,7 +68,12 @@ export default function MyLessons() {
           <h1>My Lessons</h1>
           <p>Create and manage your teaching content</p>
         </div>
-        <button className="btn primary"><Plus size={18}/> Create New</button>
+        <button 
+          className="btn primary"
+          onClick={() => navigate("/teacher/lessons/create")}
+        >
+          <Plus size={10}/> Create New
+        </button>
       </div>
 
       {/* Stats Overview */}
@@ -86,7 +99,9 @@ export default function MyLessons() {
         </div>
         <div className="stat-card">
           <p>Avg. Completion</p>
-          <h3 className="text-blue">87%</h3>
+          <h3 className="text-blue">
+            {lessons.length>0 ? Math.round((lessons.filter(l=>l.status==="published").length / lessons.length) * 100) : 0}%
+          </h3>
         </div>
       </div>
 
@@ -120,25 +135,25 @@ export default function MyLessons() {
         </div>
       </div>
 
-      {/* Lessons Grid */}
+      {/* Lessons Grid/List */}
       {viewMode==="grid" ? (
         <div className="lessons-grid">
-          {filteredLessons.map(lesson=>(
-            <div key={lesson.id} className="lesson-card">
+          {filteredLessons.map((lesson, i) => (
+            <div key={lesson.id || i} className="lesson-card">
               <h3>{lesson.title}</h3>
-              <p className="meta">{lesson.subject} • {lesson.duration}</p>
+              <p className="meta">{lesson.subject} • {lesson.duration || "N/A"}</p>
               <p className={`badge ${lesson.status}`}>{lesson.status}</p>
               <div className="topics">
-                {lesson.topics.map((t,i)=><span key={i}>{t}</span>)}
+                {lesson.topics?.map((t,i)=><span key={i}>{t}</span>)}
               </div>
-              <p className="meta">Last Modified: {lesson.lastModified}</p>
+              <p className="meta">Last Modified: {lesson.lastModified || "Just now"}</p>
             </div>
           ))}
         </div>
       ) : (
         <div className="lesson-list">
-          {filteredLessons.map(lesson=>(
-            <div key={lesson.id} className="lesson-row">
+          {filteredLessons.map((lesson,i)=>(
+            <div key={lesson.id || i} className="lesson-row">
               <div className="info">
                 <h3>{lesson.title}</h3>
                 <span className="meta">{lesson.subject} • {lesson.type}</span>
