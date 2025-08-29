@@ -13,3 +13,27 @@
 .progress{ height:8px; background:#e5e7eb; border-radius:999px; overflow:hidden; }
 .progress > span{ display:block; height:100%; background:#10b981; }
 .breadcrumbs{ color:#334155; margin-bottom:12px; font-weight:700; }
+
+/* ensure the + sits inside the gray card */
+.panel{ position: relative; }
+
+/* floating action button (bottom-right) */
+.fab{
+  position:absolute; right:20px; bottom:20px;
+  width:62px; height:62px; border-radius:999px;
+  display:grid; place-items:center;
+  font-size:34px; color:#fff; border:none; cursor:pointer;
+  box-shadow:0 14px 30px rgba(2,6,23,.25);
+}
+.fab.red{ background:#2707f0; }
+
+/* inline add form card */
+.add-card{
+  width:min(560px, 90%);
+  background:#fff; border-radius:12px; padding:14px;
+  box-shadow:0 8px 25px rgba(2,6,23,.06);
+  display:grid; gap:10px;
+}
+.row{ display:flex; gap:10px; justify-content:center; }
+
+
