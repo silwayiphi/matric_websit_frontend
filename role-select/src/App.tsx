@@ -49,6 +49,7 @@ export default function App() {
       </Route>
 
       {/* ADMIN AREA (requires AdminLayout) */}
+      {/* ADMIN AREA (requires AdminLayout) */}
       <Route path="/admin" element={<AdminLayout />}>
         <Route index element={<AdminDashboard />} />
         <Route path="dashboard" element={<AdminDashboard />} />
@@ -68,6 +69,7 @@ export default function App() {
       </Route>
 
       {/* Fallback */}
+      <Route path="*" element={<div className="page"><h2>Not found</h2></div>} />
       <Route path="*" element={<div className="page"><h2>Not found</h2></div>} />
     </Routes>
   );

@@ -5,7 +5,7 @@ import "./TeacherLayout.css";
 
 export default function TeacherLayout() {
   const navigate = useNavigate();
-  const handleLogout = () => navigate("/teacher/login");
+  const handleLogout = () => navigate("/TeacherLogin");
 
   const navItems = [
     { path: "/teacher/dashboard", label: "Dashboard", icon: Home },

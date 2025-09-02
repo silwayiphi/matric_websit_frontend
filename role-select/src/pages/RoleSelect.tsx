@@ -23,13 +23,15 @@ export default function RoleSelect() {
       <h1 className="title">Select Your Role</h1>
 
       <div className="grid">
-        <Link to="/admin/login" className="card" role="button" aria-label="Continue as Admin">
+        <Link to="/AdminLogin" className="card" role="button" aria-label="Continue as Admin">
           <div className="icon"><ShieldGearIcon /></div>
           <div className="label">Admin</div>
         </Link>
 
 
+
         <Link to="/TeacherLogin" className="card" role="button" aria-label="Continue as Teacher">
+
           <div className="icon"><BlackboardIcon /></div>
           <div className="label">Teacher</div>
         </Link>
