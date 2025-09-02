@@ -28,15 +28,12 @@ import Papers from "./pages/Admin/content/paper";
 export default function App() {
   return (
     <Routes>
-      {/* Public entry points */}
       <Route path="/" element={<RoleSelect />} />
-      <Route path="/AdminLogin" element={<AdminLogin />} />
+      <Route path="AdminLogin" element={<AdminLogin />} />
       <Route path="ForgotPassword" element={<ForgotPassword/>}/>
       <Route path="TeacherLogin" element={<TeacherLogin/>}/>
       <Route path="TeachersForgotPassword" element={<TeachersForgotPassword/>}/>
       
-
-      {/* TEACHER AREA: all routes that inherit TeacherLayout */}
       <Route path="/teacher" element={<TeacherLayout />}>
         <Route index element={<TeacherDashboard />} />   {/* This means /teacher */}
         <Route path="dashboard" element={<TeacherDashboard />} />
@@ -50,6 +47,7 @@ export default function App() {
 
       {/* ADMIN AREA (requires AdminLayout) */}
       {/* ADMIN AREA (requires AdminLayout) */}
+  
       <Route path="/admin" element={<AdminLayout />}>
         <Route index element={<AdminDashboard />} />
         <Route path="dashboard" element={<AdminDashboard />} />
@@ -57,10 +55,10 @@ export default function App() {
         <Route path="students" element={<Students />} />
 
           <Route path="content" element={<Content />}>
-        <Route index element={<Subjects />} />                                {/* /admin/content */}
-        <Route path=":subject/papers" element={<Papers />} />                 {/* /admin/content/mathematics/papers */}
-        <Route path=":subject/:paper/content" element={<ContentPage />} />  {/* /admin/content/mathematics/paper-1/content */}
-        <Route path=":subject/:paper/:topic/upload" element={<Upload />} />   {/* /admin/content/mathematics/paper-1/algebra/upload */}
+        <Route index element={<Subjects />} />                               
+        <Route path=":subject/papers" element={<Papers />} />                
+        <Route path=":subject/:paper/content" element={<ContentPage />} /> 
+        <Route path=":subject/:paper/:topic/upload" element={<Upload />} />   
         </Route>
 
         <Route path="packages" element={<Packages />} />
@@ -68,7 +66,7 @@ export default function App() {
         <Route path="settings" element={<Settings />} />
       </Route>
 
-      {/* Fallback */}
+    
       <Route path="*" element={<div className="page"><h2>Not found</h2></div>} />
       <Route path="*" element={<div className="page"><h2>Not found</h2></div>} />
     </Routes>
